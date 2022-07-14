@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hosts
   resources :songs
   resources :power_hours
   resources :participants
