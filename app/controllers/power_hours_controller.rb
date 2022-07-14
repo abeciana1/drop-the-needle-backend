@@ -1,0 +1,2 @@
+class PowerHoursController < ApplicationController
+end
