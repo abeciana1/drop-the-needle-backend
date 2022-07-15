@@ -31,8 +31,9 @@ class Api::V1::SongsController < ApplicationController
 
     def song_params
         params.permit(
-            :song_title,
-            :song_artist,
+            :title,
+            :artist,
+            :album,
             :youtube_link,
             :start_time,
             :end_time,
