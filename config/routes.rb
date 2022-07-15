@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :hosts
-  resources :songs
-  resources :power_hours
-  resources :participants
-  resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :api do
+      resources :hosts
+      resources :songs
+      resources :power_hours
+      resources :participants
+      resources :users
+    end
+  end
 end
