@@ -29,7 +29,8 @@ class ParticipantsController < ApplicationController
     def participant_params
         params.permit(
             :user_id,
-            :power_hour_id
+            :power_hour_id,
+            :confirmed_rsvp
         )
     end
 end
