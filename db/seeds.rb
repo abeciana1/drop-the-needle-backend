@@ -16,6 +16,29 @@ PowerHour.destroy_all
 User.destroy_all
 
 puts 'create testing account'
-# alex = User.create(name: 'Alex', email: 'alex@test.com', password: '1234')
+alex = User.create(name: 'Alex', email: 'alex@test.com', password: '1234')
+
+puts 'create fake users'
+puts 'fake user 1'
+fake1 = User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: '5678'
+)
+puts 'fake user 2'
+fake2 = User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: '5678'
+)
+puts 'fake user 3'
+fake3 = User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: '5678'
+)
+
+puts 'create fake power hours'
+puts 'fake power hour 1'
 
 0
