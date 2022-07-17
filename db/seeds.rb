@@ -16,5 +16,6 @@ PowerHour.destroy_all
 User.destroy_all
 
 puts 'create testing account'
+# alex = User.create(name: 'Alex', email: 'alex@test.com', password: '1234')
 
 0
