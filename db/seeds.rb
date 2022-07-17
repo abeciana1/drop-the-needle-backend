@@ -75,4 +75,12 @@ h3 = Host.create(
     power_hour: ph3.id
 )
 
+puts 'Create participants for power hours'
+puts 'power hour 1'
+php1 = Participant.create(
+    user_id: alex.id,
+    power_hour: ph1.id
+)
+
+
 0
