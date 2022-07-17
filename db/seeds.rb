@@ -109,6 +109,7 @@ s1 = Song.create(
     end_time: '0:15',
     power_hour_id: ph1.id,
     user_id: alex.id,
+    order_number: 1
 )
 puts 'Create song 2'
 s2 = Song.create(
@@ -120,6 +121,7 @@ s2 = Song.create(
     end_time: '0:15',
     power_hour_id: ph1.id,
     user_id: fake1.id,
+    order_number: 2
 )
 puts 'Create song 3'
 s3 = Song.create(
@@ -131,6 +133,7 @@ s3 = Song.create(
     end_time: '0:15',
     power_hour_id: ph1.id,
     user_id: fake2.id,
+    order_number: 3
 )
 puts 'Create song 4'
 s3 = Song.create(
@@ -142,5 +145,6 @@ s3 = Song.create(
     end_time: '0:15',
     power_hour_id: ph1.id,
     user_id: fake3.id,
+    order_number: 4
 )
 0
