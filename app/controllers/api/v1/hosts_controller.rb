@@ -12,10 +12,24 @@ class HostsController < ApplicationController
         end
     end
 
+    def update
+        host = Host.find(params[:id])
+        host.update(host_params)
+        render :json => host, each_serializer: HostSerializer
+    end
+    
+    def delete
+        host = Host.find(params[:id])
+        host.destroy
+        render json: {}
+    end
+
     private
 
-    params.permit(
-        :user_id,
-        :power_hour_id
-    )
+    def host_params
+        params.permit(
+            :user_id,
+            :power_hour_id
+        )
+    end
 end
