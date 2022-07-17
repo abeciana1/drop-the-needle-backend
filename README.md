@@ -1,24 +1,8 @@
-# README
+# Drop The Needle — Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<!-- todo Added host_confirm bool field in hosts table -->
+<!-- todo Create Host actions -->
+<!-- todo Create participant actions -->
+<!-- todo add fields to serializers -->
+<!-- todo create seed data -->
+<!-- todo add youtube search functionality -->
