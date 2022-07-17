@@ -79,8 +79,23 @@ puts 'Create participants for power hours'
 puts 'power hour 1'
 php1 = Participant.create(
     user_id: alex.id,
-    power_hour: ph1.id
+    power_hour: ph1.id,
+    confirmed_rsvp: true
 )
-
+php2 = Participant.create(
+    user_id: fake1.id,
+    power_hour: ph1.id,
+    confirmed_rsvp: false
+)
+php3 = Participant.create(
+    user_id: fake2.id,
+    power_hour: ph1.id,
+    confirmed_rsvp: false
+)
+php4 = Participant.create(
+    user_id: fake3.id,
+    power_hour: ph1.id,
+    confirmed_rsvp: false
+)
 
 0
