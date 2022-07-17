@@ -1,3 +1,6 @@
 class HostSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :user_id, :power_hour_id
+
+  has_one :user
+  has_one :power_hour
 end
