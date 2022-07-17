@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'pry'
+require 
+
+puts "destroy all"
+Host.destroy_all
+Participant.destroy_all
+Song.destroy_all
+PowerHour.destroy_all
+User.destroy_all
+
+puts 'create testing account'
+
+0
