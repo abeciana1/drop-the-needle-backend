@@ -98,4 +98,49 @@ php4 = Participant.create(
     confirmed_rsvp: false
 )
 
+puts 'Create songs'
+puts 'Create song 1'
+s1 = Song.create(
+    title: Faker::Music::RockBand.song,
+    artist: Faker::Music::RockBand.name,
+    album: Faker::Music.album
+    youtube_link: 'https://www.youtube.com/watch?v=W8r-tXRLazs',
+    start_time: 10,
+    end_time: 15,
+    power_hour_id: ph1.id,
+    user_id: alex.id,
+)
+puts 'Create song 2'
+s2 = Song.create(
+    title: Faker::Music::RockBand.song,
+    artist: Faker::Music::RockBand.name,
+    album: Faker::Music.album
+    youtube_link: 'https://www.youtube.com/watch?v=uhG-vLZrb-g',
+    start_time: 10,
+    end_time: 15,
+    power_hour_id: ph1.id,
+    user_id: fake1.id,
+)
+puts 'Create song 3'
+s3 = Song.create(
+    title: Faker::Music::RockBand.song,
+    artist: Faker::Music::RockBand.name,
+    album: Faker::Music.album
+    youtube_link: 'https://www.youtube.com/watch?v=wVrSXeRXSWE',
+    start_time: 10,
+    end_time: 15,
+    power_hour_id: ph1.id,
+    user_id: fake2.id,
+)
+puts 'Create song 4'
+s3 = Song.create(
+    title: Faker::Music::RockBand.song,
+    artist: Faker::Music::RockBand.name,
+    album: Faker::Music.album
+    youtube_link: 'https://www.youtube.com/watch?v=qgtkPKZ2OPk',
+    start_time: 10,
+    end_time: 15,
+    power_hour_id: ph1.id,
+    user_id: fake3.id,
+)
 0
