@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'pry'
-require 
+require 'faker'
 
 puts "destroy all"
 Host.destroy_all
@@ -43,58 +43,58 @@ puts 'fake power hour 1'
 ph1 = PowerHour.create(
     title: 'fake power hour 1',
     description: Faker::Hipster.sentence,
-    cover_image: 'https://www.thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Magical-Mystery-Tour.jpg?itok=8midCi2f'
+    cover_image: 'https://www.thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Magical-Mystery-Tour.jpg?itok=8midCi2f',
     date_time: Faker::Date.between(from: '2022-08-01', to: '2022-08-31')
 )
 puts 'fake power hour 2'
 ph2 = PowerHour.create(
     title: 'fake power hour 2',
     description: Faker::Hipster.sentence,
-    cover_image: 'https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg'
+    cover_image: 'https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg',
     date_time: Faker::Date.between(from: '2022-08-01', to: '2022-08-31')
 )
 puts 'fake power hour 3'
 ph3 = PowerHour.create(
     title: 'fake power hour 3',
     description: Faker::Hipster.sentence,
-    cover_image: 'https://www.cleveland.com/resizer/QXH4tEN4nFdZgqSSPz0nPIyuk7k=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/2CJOQE4IK5AY5OD33OHU5WOIIU.jpg'
+    cover_image: 'https://www.cleveland.com/resizer/QXH4tEN4nFdZgqSSPz0nPIyuk7k=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/2CJOQE4IK5AY5OD33OHU5WOIIU.jpg',
     date_time: Faker::Date.between(from: '2022-08-01', to: '2022-08-31')
 )
 
 puts 'Create hosts'
 h1 = Host.create(
     user_id: alex.id,
-    power_hour: ph1.id
+    power_hour_id: ph1.id
 )
 h2 = Host.create(
-    user_id: fake1.id
-    power_hour: ph2.id
+    user_id: fake1.id,
+    power_hour_id: ph2.id
 )
 h3 = Host.create(
     user_id: fake2.id,
-    power_hour: ph3.id
+    power_hour_id: ph3.id
 )
 
 puts 'Create participants for power hours'
 puts 'power hour 1'
 php1 = Participant.create(
     user_id: alex.id,
-    power_hour: ph1.id,
+    power_hour_id: ph1.id,
     confirmed_rsvp: true
 )
 php2 = Participant.create(
     user_id: fake1.id,
-    power_hour: ph1.id,
+    power_hour_id: ph1.id,
     confirmed_rsvp: false
 )
 php3 = Participant.create(
     user_id: fake2.id,
-    power_hour: ph1.id,
+    power_hour_id: ph1.id,
     confirmed_rsvp: false
 )
 php4 = Participant.create(
     user_id: fake3.id,
-    power_hour: ph1.id,
+    power_hour_id: ph1.id,
     confirmed_rsvp: false
 )
 
@@ -103,19 +103,18 @@ puts 'Create song 1'
 s1 = Song.create(
     title: Faker::Music::RockBand.song,
     artist: Faker::Music::RockBand.name,
-    album: Faker::Music.album
+    album: Faker::Music.album,
     youtube_link: 'https://www.youtube.com/watch?v=W8r-tXRLazs',
     start_time: '0:10',
     end_time: '0:15',
     power_hour_id: ph1.id,
     user_id: alex.id,
-    order_number: 1
-)
+    order_number: 1)
 puts 'Create song 2'
 s2 = Song.create(
     title: Faker::Music::RockBand.song,
     artist: Faker::Music::RockBand.name,
-    album: Faker::Music.album
+    album: Faker::Music.album,
     youtube_link: 'https://www.youtube.com/watch?v=uhG-vLZrb-g',
     start_time: '0:10',
     end_time: '0:15',
@@ -127,7 +126,7 @@ puts 'Create song 3'
 s3 = Song.create(
     title: Faker::Music::RockBand.song,
     artist: Faker::Music::RockBand.name,
-    album: Faker::Music.album
+    album: Faker::Music.album,
     youtube_link: 'https://www.youtube.com/watch?v=wVrSXeRXSWE',
     start_time: '0:10',
     end_time: '0:15',
@@ -139,7 +138,7 @@ puts 'Create song 4'
 s3 = Song.create(
     title: Faker::Music::RockBand.song,
     artist: Faker::Music::RockBand.name,
-    album: Faker::Music.album
+    album: Faker::Music.album,
     youtube_link: 'https://www.youtube.com/watch?v=qgtkPKZ2OPk',
     start_time: '0:10',
     end_time: '0:15',
@@ -147,3 +146,6 @@ s3 = Song.create(
     user_id: fake3.id,
     order_number: 4
 )
+
+puts 'all done'
+0
