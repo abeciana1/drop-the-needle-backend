@@ -147,4 +147,3 @@ s3 = Song.create(
     user_id: fake3.id,
     order_number: 4
 )
-0
