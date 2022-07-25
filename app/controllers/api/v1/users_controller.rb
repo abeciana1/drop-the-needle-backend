@@ -1,3 +1,5 @@
+require 'pry'
+
 class Api::V1::UsersController < ApplicationController
     skip_before_action :authorized, only: [:create, :session_renew, :check_email, :change_password]
     before_action :authorized, only: [:show], if: -> { @current_user }
@@ -29,6 +31,7 @@ class Api::V1::UsersController < ApplicationController
 
     def create
         user = User.create(user_params)
+        # binding.pry
         if user.valid?
             # render json: { user: UserSerializer.new(user) }, status: :created
             token = encode_token(user_id: user.id)
@@ -72,7 +75,7 @@ class Api::V1::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(
+        params.require(:userData).permit(
             :name,
             :email,
             :password

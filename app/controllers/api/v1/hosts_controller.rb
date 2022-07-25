@@ -3,7 +3,7 @@ require 'pry'
 class HostsController < ApplicationController
 
     def create
-        binding.pry
+        # binding.pry
         host = Host.create(host_params)
         if host.valid?
             render json: { host: HostSerializer.new(host) }, status: :created
