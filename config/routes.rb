@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       resources :power_hours
       resources :participants
       resources :users
+      post '/login', to: 'auth#create'
+      get '/profile', to: 'users#profile'
+      get '/session-renew', to: 'users#session_renew'
     end
   end
 end

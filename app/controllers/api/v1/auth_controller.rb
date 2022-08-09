@@ -5,7 +5,11 @@ class Api::V1::AuthController < ApplicationController
         user = User.find_by(email: user_login_params[:email])
         if user && user.authenticate(user_login_params[:password])
             token = encode_token({ user_id: user.id })
-            cookies.signed[:jwt] = {value: token, httponly: true,   expires: 1.hour.from_now}
+            cookies.signed[:jwt] = {
+                value: token, 
+                httponly: true, 
+                expires: 1.hour.from_now,
+            }
             render json: { user: UserSerializer.new(user), jwt: token }, status: :accepted
         else
             render json: { message: 'Invalid username or password' }, status: :unauthorized
@@ -15,6 +19,6 @@ class Api::V1::AuthController < ApplicationController
     private
 
     def user_login_params
-        params.require(:user).permit(:email, :password)
+        params.require(:userData).permit(:email, :password)
     end
 end

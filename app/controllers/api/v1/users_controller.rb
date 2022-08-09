@@ -24,18 +24,20 @@ class Api::V1::UsersController < ApplicationController
         cookies.signed[:jwt] = {
             value: token,
             httponly: true,
-            expires: 1.hour.from_now
+            expires: 1.hour.from_now,
         }
         render json: { user: UserSerializer.new(current_user) }, status: :accepted
     end
 
     def create
         user = User.create(user_params)
-        # binding.pry
         if user.valid?
-            # render json: { user: UserSerializer.new(user) }, status: :created
             token = encode_token(user_id: user.id)
-            cookies.signed[:jwt] = {value: token, httponly: true,   expires: 1.hour.from_now}
+            cookies.signed[:jwt] = {
+                value: token, 
+                httponly: true,
+                expires: 1.hour.from_now,
+            }
             render json: { user: UserSerializer.new(user), jwt: token }, status: :created
         else
             #! look into custom error messaging
