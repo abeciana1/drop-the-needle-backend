@@ -18,7 +18,6 @@ class Song < ApplicationRecord
     def embed_link
         converted_start_time = time_to_second_convert(self.start_time)
         converted_end_time = time_to_second_convert(self.end_time)
-        # binding.pry
         embed_link = "#{self.youtube_link}?start=#{converted_start_time}&end=#{converted_end_time}"
         return embed_link
     end
