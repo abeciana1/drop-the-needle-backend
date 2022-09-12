@@ -15,10 +15,18 @@ class Song < ApplicationRecord
         end
     end
 
+    def convert_link_embed
+        # turn this --- https://www.youtube.com/watch?v=qgtkPKZ2OPk
+        # into this --- https://www.youtube.com/embed/fvXPmtkojnw
+        youtube_id = self.youtube_link.split('=')
+        converted_link = "https://www.youtube.com/embed/#{youtube_id[1]}"
+        return converted_link
+    end
+
     def embed_link
         converted_start_time = time_to_second_convert(self.start_time)
         converted_end_time = time_to_second_convert(self.end_time)
-        embed_link = "#{self.youtube_link}?start=#{converted_start_time}&end=#{converted_end_time}"
+        embed_link = "#{self.convert_link_embed}?start=#{converted_start_time}&end=#{converted_end_time}"
         return embed_link
     end
 end
