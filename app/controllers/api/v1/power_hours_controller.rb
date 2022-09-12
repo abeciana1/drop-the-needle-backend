@@ -70,7 +70,9 @@ class Api::V1::PowerHoursController < ApplicationController
             :title,
             :description,
             :cover_image,
-            :date_time
+            :date_time,
+            :submission_deadline,
+            :publish_status
         )
     end
 end
