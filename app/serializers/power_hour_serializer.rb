@@ -1,5 +1,5 @@
 class PowerHourSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :cover_image, :date_time, :hosts, :participants
+  attributes :id, :title, :description, :cover_image, :date_time, :hosts, :participants, :publish_status, :submission_deadline
 
   has_many :songs
 
