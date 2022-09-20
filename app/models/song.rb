@@ -20,6 +20,7 @@ class Song < ApplicationRecord
         # into this --- https://www.youtube.com/embed/fvXPmtkojnw
         youtube_id = self.youtube_link.split('=')
         converted_link = "https://www.youtube.com/embed/#{youtube_id[1]}"
+        # converted_link = youtube_id[1]
         return converted_link
     end
 

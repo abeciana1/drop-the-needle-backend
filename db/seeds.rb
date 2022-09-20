@@ -44,21 +44,27 @@ ph1 = PowerHour.create(
     title: 'fake power hour 1',
     description: Faker::Hipster.sentence,
     cover_image: 'https://www.thebeatles.com/sites/default/files/styles/responsive_thumbnail_mobile/public/2021-06/Magical-Mystery-Tour.jpg?itok=8midCi2f',
-    date_time: Faker::Date.between(from: '2022-08-01', to: '2022-08-31')
+    date_time: Faker::Date.between(from: '2022-10-01', to: '2022-10-31'),
+    submission_deadline: Faker::Date.between(from: '2022-10-11', to: '2022-10-31'),
+    publish_status: false
 )
 puts 'fake power hour 2'
 ph2 = PowerHour.create(
     title: 'fake power hour 2',
     description: Faker::Hipster.sentence,
     cover_image: 'https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg',
-    date_time: Faker::Date.between(from: '2022-08-01', to: '2022-08-31')
+    date_time: Faker::Date.between(from: '2022-10-01', to: '2022-10-31'),
+    submission_deadline: Faker::Date.between(from: '2022-10-11', to: '2022-10-31'),
+    publish_status: false
 )
 puts 'fake power hour 3'
 ph3 = PowerHour.create(
     title: 'fake power hour 3',
     description: Faker::Hipster.sentence,
     cover_image: 'https://www.cleveland.com/resizer/QXH4tEN4nFdZgqSSPz0nPIyuk7k=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/2CJOQE4IK5AY5OD33OHU5WOIIU.jpg',
-    date_time: Faker::Date.between(from: '2022-08-01', to: '2022-08-31')
+    date_time: Faker::Date.between(from: '2022-10-01', to: '2022-10-31'),
+    submission_deadline: Faker::Date.between(from: '2022-10-11', to: '2022-10-31'),
+    publish_status: false
 )
 
 puts 'Create hosts'
