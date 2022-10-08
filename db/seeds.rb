@@ -9,14 +9,14 @@ require 'pry'
 require 'faker'
 
 puts "destroy all"
-User.destroy_all
 Host.destroy_all
+User.destroy_all
 Participant.destroy_all
 Song.destroy_all
 PowerHour.destroy_all
 
 puts 'create testing account'
-alex = User.create(name: 'Alex', email: 'alex@test.com', password: '1234')
+alex = User.create(name: 'Alex', email: 'alexb@test.com', password: '1234')
 
 puts 'create fake users'
 puts 'fake user 1'
